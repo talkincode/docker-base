@@ -41,6 +41,7 @@ RUN pip install dict2xml
 RUN pip install msgpack-python
 RUN pip install psutil
 RUN pip install txweb
+RUN pip install txmongo
 RUN pip install txradius
 RUN pip install txportal
 RUN pip install tablib
