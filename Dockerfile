@@ -49,5 +49,6 @@ RUN pip install autobahn
 RUN pip install IPy
 RUN pip install evernote
 RUN pip install python-memcached
+RUN pip install wechat-sdk
 
 
