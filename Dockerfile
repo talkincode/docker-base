@@ -3,7 +3,7 @@ MAINTAINER toughcloud <support@toughstruct.com>
 
 RUN yum update -y
 RUN yum install -y epel-release
-RUN yum install -y wget gcc git redis vim htop crontabs zip unzip tcpdump \
+RUN yum install -y wget gcc git redis beanstalkd vim htop crontabs zip unzip tcpdump \
         libffi-devel openssl openssl-devel \
         python-devel python-setuptools \
         libjpeg-devel libpng-devel czmq czmq-devel \
