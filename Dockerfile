@@ -3,7 +3,7 @@ MAINTAINER toughcloud <support@toughstruct.com>
 
 RUN yum update -y
 RUN yum install -y epel-release
-RUN yum install -y wget gcc git redis beanstalkd vim htop crontabs zip unzip tcpdump \
+RUN yum install -y wget gcc git redis beanstalkd vim htop crontabs zip unzip tcpdump rsyslog \
         libffi-devel openssl openssl-devel \
         python-devel python-setuptools \
         libjpeg-devel libpng-devel czmq czmq-devel \
@@ -15,6 +15,8 @@ RUN yum clean all
 
 RUN echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+
+ADD rsyslog.conf /etc/rsyslog.conf
 
 RUN easy_install -U pip
 RUN pip install Click
@@ -50,5 +52,12 @@ RUN pip install IPy
 RUN pip install evernote
 RUN pip install python-memcached
 RUN pip install wechat-sdk
+
+
+EXPOSE 514
+EXPOSE 514/udp
+
+
+
 
 
