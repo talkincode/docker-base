@@ -16,8 +16,6 @@ RUN yum clean all
 RUN echo "set nocompatible" >> /root/.vimrc && echo "set backspace=2" >> /root/.vimrc
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
-ADD rsyslog.conf /etc/rsyslog.conf
-
 RUN easy_install -U pip
 RUN pip install Click
 RUN pip install Mako
